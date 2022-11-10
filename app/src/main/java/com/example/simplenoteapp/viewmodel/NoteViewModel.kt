@@ -2,6 +2,8 @@ package com.example.simplenoteapp.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.simplenoteapp.model.Note
 import com.example.simplenoteapp.repository.NoteRepository
@@ -23,5 +25,13 @@ class NoteViewModel(
     fun deleteNote(note: Note) = viewModelScope.launch {
         noteRepository.deleteNote(note)
     }
-    fun getAllNote() =noteRepository.getAllNotes()
+
+    fun getAllNote() = noteRepository.getAllNotes()
+}
+
+class NoteViewModelFactory(val app: Application, val repository: NoteRepository) :
+    ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        return NoteViewModel(app = app, noteRepository = repository) as T
+    }
 }

@@ -20,19 +20,11 @@
         android:id="@+id/newNoteFragment"
         android:name="com.example.simplenoteapp.fragments.NewNoteFragment"
         android:label="New Note"
-        tools:layout="@layout/fragment_new_note">
-        <action
-            android:id="@+id/action_newNoteFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_new_note"/>
     <fragment
         android:id="@+id/updateNoteFragment"
         android:name="com.example.simplenoteapp.fragments.UpdateNoteFragment"
         android:label="Update Note"
-        tools:layout="@layout/fragment_update_note">
-        <action
-            android:id="@+id/action_updateNoteFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_update_note"/>
 
 </navigation>
