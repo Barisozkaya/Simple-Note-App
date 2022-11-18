@@ -6,7 +6,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.simplenoteapp.fragments.HomeFragment"
+        android:name="com.example.simplenoteapp.ui.home.HomeFragment"
         android:label="Notes"
         tools:layout="@layout/fragment_home">
         <action
@@ -18,12 +18,12 @@
     </fragment>
     <fragment
         android:id="@+id/newNoteFragment"
-        android:name="com.example.simplenoteapp.fragments.NewNoteFragment"
+        android:name="com.example.simplenoteapp.ui.newnote.NewNoteFragment"
         android:label="New Note"
         tools:layout="@layout/fragment_new_note"/>
     <fragment
         android:id="@+id/updateNoteFragment"
-        android:name="com.example.simplenoteapp.fragments.UpdateNoteFragment"
+        android:name="com.example.simplenoteapp.ui.updatenote.UpdateNoteFragment"
         android:label="Update Note"
         tools:layout="@layout/fragment_update_note"/>
 

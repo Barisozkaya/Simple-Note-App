@@ -1,9 +1,8 @@
-package com.example.simplenoteapp.viewmodel
+package com.example.simplenoteapp.ui
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.simplenoteapp.db.NoteDao
 import com.example.simplenoteapp.repository.NoteRepository
 
 class NoteViewModelProviderFactory(

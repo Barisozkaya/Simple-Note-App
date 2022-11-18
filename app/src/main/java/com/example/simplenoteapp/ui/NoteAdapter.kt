@@ -1,9 +1,8 @@
-package com.example.simplenoteapp.adapter
+package com.example.simplenoteapp.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
-import androidx.recyclerview.widget.AsyncListUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.simplenoteapp.databinding.NoteLayoutAdapterBinding
@@ -26,8 +25,8 @@ class NoteAdapter: RecyclerView.Adapter<NoteAdapter.NoteViewHolder>(){
             }
 
         }
-    val differ = AsyncListDiffer(this,differCallBack)
 
+    val differ = AsyncListDiffer(this,differCallBack)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         binding = NoteLayoutAdapterBinding.inflate(
@@ -42,14 +41,12 @@ class NoteAdapter: RecyclerView.Adapter<NoteAdapter.NoteViewHolder>(){
         val currentNote = differ.currentList[position]
 
         holder.itemView.apply {
-
             binding?.tvNoteTittle?.text = currentNote.nateTitle
             binding?.tvNoteBody?.text = currentNote.noteBody
-
         }
     }
 
     override fun getItemCount(): Int {
-      return differ.currentList.size
+        return differ.currentList.size
     }
 }

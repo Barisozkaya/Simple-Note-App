@@ -1,23 +1,17 @@
 @file:Suppress("DEPRECATION")
 
-package com.example.simplenoteapp.fragments
+package com.example.simplenoteapp.ui.newnote
 
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.example.simplenoteapp.MainActivity
 import com.example.simplenoteapp.R
-import com.example.simplenoteapp.databinding.FragmentHomeBinding
 import com.example.simplenoteapp.databinding.FragmentNewNoteBinding
 import com.example.simplenoteapp.model.Note
 import com.example.simplenoteapp.toast
-import com.example.simplenoteapp.viewmodel.NoteViewModel
-import com.google.android.material.snackbar.Snackbar
-
+import com.example.simplenoteapp.ui.NoteViewModel
 
 class NewNoteFragment : Fragment(R.layout.fragment_new_note) {
 
@@ -50,19 +44,17 @@ class NewNoteFragment : Fragment(R.layout.fragment_new_note) {
         val noteBody = binding.addNoteBody.text.toString().trim()
 
         if (noteTitle.isNotEmpty()) {
-            val note = Note(0, noteTitle, noteBody)
-
-            noteViewModel.addNote(note)
-            Snackbar.make(
-                requireView(),
-                "Note saved successfully",
-                Snackbar.LENGTH_SHORT
-            ).show()
-
-            findNavController().popBackStack()
+            noteViewModel.addNote(
+                Note(0, noteTitle, noteBody)
+            )
+            activity?.toast("Please enter note title!")
+            jumpToHome()
         } else {
             activity?.toast("Please enter note title!")
         }
+    }
+    private fun jumpToHome(){
+        findNavController().popBackStack()
     }
 
     @Deprecated("Deprecated in Java")

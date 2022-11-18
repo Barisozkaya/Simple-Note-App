@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.simplenoteapp.common.Constants.NOTE_DB_NAME
 import com.example.simplenoteapp.model.Note
 
 @Database(entities = [Note::class], version = 1)
@@ -26,8 +27,7 @@ abstract class NoteDataBase : RoomDatabase() {
         private fun createDataBase(context: Context) = Room.databaseBuilder(
             context.applicationContext,
             NoteDataBase::class.java,
-            "note_db"
+            NOTE_DB_NAME
         ).build()
-
     }
 }
