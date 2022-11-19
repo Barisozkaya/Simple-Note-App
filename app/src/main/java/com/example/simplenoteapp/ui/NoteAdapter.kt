@@ -2,11 +2,13 @@ package com.example.simplenoteapp.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.simplenoteapp.databinding.NoteLayoutAdapterBinding
 import com.example.simplenoteapp.model.Note
+import com.example.simplenoteapp.ui.home.HomeFragmentDirections
 
 class NoteAdapter: RecyclerView.Adapter<NoteAdapter.NoteViewHolder>(){
 
@@ -43,9 +45,13 @@ class NoteAdapter: RecyclerView.Adapter<NoteAdapter.NoteViewHolder>(){
         holder.itemView.apply {
             binding?.tvNoteTittle?.text = currentNote.nateTitle
             binding?.tvNoteBody?.text = currentNote.noteBody
+        }.setOnClickListener{ mView ->
+            val direction = HomeFragmentDirections.actionHomeFragmentToUpdateNoteFragment(currentNote)
+            mView.findNavController().navigate(
+                direction
+            )
         }
     }
-
     override fun getItemCount(): Int {
         return differ.currentList.size
     }

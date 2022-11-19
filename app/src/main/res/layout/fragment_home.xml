@@ -22,7 +22,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:focusable="true"
-        android:contentDescription="image" />
+        android:contentDescription="@string/image" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -41,7 +41,7 @@
             android:id="@+id/tv_no_notes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="No notes! "
+            android:text="@string/no_note"
             android:gravity="center"
             android:padding="40dp"
             android:textColor="@color/black"
