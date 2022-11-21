@@ -59,7 +59,9 @@ class UpdateNoteFragment : Fragment() {
 
             if (titte.isNotEmpty()) {
                 val note = Note(currentNote.id, titte, body)
-                noteViewModel.addNote(note)
+                noteViewModel.updateNote(note)
+
+                activity?.toast("Note Updated!")
                 view?.findNavController()?.navigate(
                     R.id.action_updateNoteFragment_to_homeFragment
                 )
