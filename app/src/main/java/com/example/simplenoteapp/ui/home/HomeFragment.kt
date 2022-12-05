@@ -17,8 +17,9 @@ import com.example.simplenoteapp.model.Note
 import com.example.simplenoteapp.repository.NoteRepository
 import com.example.simplenoteapp.ui.NoteViewModel
 import com.example.simplenoteapp.ui.NoteViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home),
 SearchView.OnQueryTextListener{
 

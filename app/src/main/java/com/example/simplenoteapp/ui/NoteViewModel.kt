@@ -8,9 +8,12 @@ import androidx.lifecycle.viewModelScope
 import androidx.room.Query
 import com.example.simplenoteapp.model.Note
 import com.example.simplenoteapp.repository.NoteRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class NoteViewModel(
+@HiltViewModel
+class NoteViewModel @Inject constructor(
     app: Application,
     private val noteRepository: NoteRepository
 ) : AndroidViewModel(app) {

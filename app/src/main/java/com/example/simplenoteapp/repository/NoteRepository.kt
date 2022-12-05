@@ -1,10 +1,12 @@
 package com.example.simplenoteapp.repository
 
-import androidx.room.Query
 import com.example.simplenoteapp.db.NoteDataBase
 import com.example.simplenoteapp.model.Note
+import dagger.hilt.android.scopes.ViewModelScoped
+import javax.inject.Inject
 
-class NoteRepository(private val db: NoteDataBase) {
+@ViewModelScoped
+class NoteRepository @Inject constructor(private val db: NoteDataBase) {
 
     suspend fun addNote(note: Note) = db.getNoteDao().addNote(note)
 

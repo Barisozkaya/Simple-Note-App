@@ -13,8 +13,10 @@ import com.example.simplenoteapp.model.Note
 import com.example.simplenoteapp.toast
 import com.example.simplenoteapp.ui.MainActivity
 import com.example.simplenoteapp.ui.NoteViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 @Suppress("DEPRECATION")
+@AndroidEntryPoint
 class UpdateNoteFragment : Fragment() {
 
     private var _binding: FragmentUpdateNoteBinding? = null

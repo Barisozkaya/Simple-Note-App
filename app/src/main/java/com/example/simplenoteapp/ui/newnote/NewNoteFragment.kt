@@ -12,7 +12,9 @@ import com.example.simplenoteapp.databinding.FragmentNewNoteBinding
 import com.example.simplenoteapp.model.Note
 import com.example.simplenoteapp.toast
 import com.example.simplenoteapp.ui.NoteViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class NewNoteFragment : Fragment(R.layout.fragment_new_note) {
 
     private var _binding: FragmentNewNoteBinding? = null

@@ -6,7 +6,9 @@ import androidx.activity.viewModels
 import com.example.simplenoteapp.databinding.ActivityMainBinding
 import com.example.simplenoteapp.db.NoteDataBase
 import com.example.simplenoteapp.repository.NoteRepository
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
