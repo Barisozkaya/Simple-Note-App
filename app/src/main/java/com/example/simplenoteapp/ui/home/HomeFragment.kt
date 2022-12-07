@@ -12,11 +12,8 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.simplenoteapp.R
 import com.example.simplenoteapp.ui.NoteAdapter
 import com.example.simplenoteapp.databinding.FragmentHomeBinding
-import com.example.simplenoteapp.db.NoteDataBase
 import com.example.simplenoteapp.model.Note
-import com.example.simplenoteapp.repository.NoteRepository
 import com.example.simplenoteapp.ui.NoteViewModel
-import com.example.simplenoteapp.ui.NoteViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,13 +23,8 @@ SearchView.OnQueryTextListener{
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private val noteViewModel: NoteViewModel by activityViewModels() {
-        NoteViewModelFactory(
-            requireActivity().application, NoteRepository(
-                NoteDataBase(requireContext())
-            )
-        )
-    }
+    private val noteViewModel: NoteViewModel by activityViewModels()
+
     private lateinit var noteAdapter: NoteAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,7 +65,7 @@ SearchView.OnQueryTextListener{
     }
 
     private fun setupClickListeners() {
-        binding.fabAddNote.setOnClickListener { _ ->
+        binding.fabAddNote.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_newNoteFragment)
         }
     }

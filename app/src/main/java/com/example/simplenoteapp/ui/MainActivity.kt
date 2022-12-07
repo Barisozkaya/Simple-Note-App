@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.simplenoteapp.databinding.ActivityMainBinding
-import com.example.simplenoteapp.db.NoteDataBase
-import com.example.simplenoteapp.repository.NoteRepository
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -13,12 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    val noteViewModel: NoteViewModel by viewModels() {
-        NoteViewModelFactory(application, NoteRepository(
-            NoteDataBase(this)
-        ))
-    }
-
+    val noteViewModel: NoteViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -29,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun setUpViewModel(){
+    private fun setUpViewModel() {
 
     }
 }

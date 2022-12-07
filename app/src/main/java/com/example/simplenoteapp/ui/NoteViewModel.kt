@@ -1,11 +1,7 @@
 package com.example.simplenoteapp.ui
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import androidx.room.Query
 import com.example.simplenoteapp.model.Note
 import com.example.simplenoteapp.repository.NoteRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,9 +10,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NoteViewModel @Inject constructor(
-    app: Application,
     private val noteRepository: NoteRepository
-) : AndroidViewModel(app) {
+) :ViewModel() {
 
     fun addNote(note: Note) = viewModelScope.launch {
         noteRepository.addNote(note)
@@ -33,11 +28,4 @@ class NoteViewModel @Inject constructor(
     fun getAllNote() = noteRepository.getAllNotes()
 
     fun searchNotes(query: String?) = noteRepository.searchNotes(query)
-}
-
-class NoteViewModelFactory(val app: Application, private val repository: NoteRepository) :
-    ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return NoteViewModel(app = app, noteRepository = repository) as T
-    }
 }
