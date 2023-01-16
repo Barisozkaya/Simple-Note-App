@@ -1,4 +1,4 @@
-package com.example.simplenoteapp.extensions
+package com.example.simplenoteapp
 
 import android.content.Context
 import android.widget.Toast

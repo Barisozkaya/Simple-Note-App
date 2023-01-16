@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.simplenoteapp.R
 import com.example.simplenoteapp.databinding.FragmentNewNoteBinding
 import com.example.simplenoteapp.model.Note
-import com.example.simplenoteapp.toast
+import com.example.simplenoteapp.extensions.toast
 import com.example.simplenoteapp.ui.NoteViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -6,11 +6,10 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.room.Delete
 import com.example.simplenoteapp.R
 import com.example.simplenoteapp.databinding.FragmentUpdateNoteBinding
 import com.example.simplenoteapp.model.Note
-import com.example.simplenoteapp.toast
+import com.example.simplenoteapp.extensions.toast
 import com.example.simplenoteapp.ui.MainActivity
 import com.example.simplenoteapp.ui.NoteViewModel
 import dagger.hilt.android.AndroidEntryPoint

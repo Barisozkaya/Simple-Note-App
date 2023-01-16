@@ -8,4 +8,5 @@
     <string name="type_something">Type something...</string>
     <string name="titles">title</string>
     <string name="typeSomething">type_something</string>
+    <string name="delete">delete</string>
 </resources>
