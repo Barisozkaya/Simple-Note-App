@@ -71,7 +71,7 @@
         android:backgroundTint="@color/black"
         app:borderWidth="0dp"
         android:tintMode="@color/white"
-        android:src="@android:drawable/ic_input_add"
+        android:src="@drawable/icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:focusable="true" />
